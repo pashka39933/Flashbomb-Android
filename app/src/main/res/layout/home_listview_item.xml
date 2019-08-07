@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/homeTabListItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!-- Top Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/homeItemCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_textview"
+                android:text="Poland"/>
+
+            <ImageView
+                android:id="@+id/homeItemEmoji"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/homeItemCountry"
+                android:layout_alignBottom="@id/homeItemCountry"
+                android:layout_toLeftOf="@id/homeItemCountry"/>
+
+        </RelativeLayout>
+
+        <!-- Preview -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+            <com.koszelew.flashbomb.UIComponents.PanoramaImageView
+                android:id="@+id/homeItemPreviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="visible"/>
+
+            <ProgressBar
+                android:id="@+id/homeItemPreviewProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>
+
+            <TextureView
+                android:id="@+id/homeItemPreviewVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"/>
+
+            <TextView
+                android:id="@+id/homeItemPreviewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/large_textview"
+                android:visibility="gone" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/homeItemSound"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:lottie_autoPlay="false"
+                app:lottie_fileName="sound_animation.json"
+                app:lottie_loop="false"
+                android:visibility="gone"
+                app:lottie_cacheStrategy="strong"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <!-- Bottom Bar -->
+        <RelativeLayout
+            android:id="@+id/homeItemTitleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:id="@+id/homeItemTitleDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="998"
+                        android:src="@drawable/ic_camera"
+                        android:tint="@color/gray_light"
+                        android:visibility="visible"/>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/homeItemLike"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="98"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="like_animation.json"
+                        app:lottie_loop="false"
+                        android:visibility="gone"
+                        app:lottie_cacheStrategy="strong"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/homeItemReport"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_report" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

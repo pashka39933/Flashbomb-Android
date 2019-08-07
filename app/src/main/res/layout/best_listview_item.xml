@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/bestTabListItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!-- Top Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/bestItemHour"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:layout_centerInParent="true"
+                android:gravity="left|center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_textview"
+                android:text="20:20" />
+
+            <TextView
+                android:id="@+id/bestItemDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:layout_centerInParent="true"
+                android:gravity="right|center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_textview"
+                android:text="09/09/2017" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- Preview -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+            <com.koszelew.flashbomb.UIComponents.PanoramaImageView
+                android:id="@+id/bestItemPreviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="visible"/>
+
+            <ProgressBar
+                android:id="@+id/bestItemPreviewProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>
+
+            <TextureView
+                android:id="@+id/bestItemPreviewVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:clickable="false"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bestItemSound"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:lottie_autoPlay="false"
+                app:lottie_fileName="sound_animation.json"
+                app:lottie_loop="false"
+                android:visibility="gone"
+                app:lottie_cacheStrategy="strong"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true" />
+
+            <LinearLayout
+                android:id="@+id/bestItemPreviewOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/best_overlay_gradient">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="35"/>
+
+                <ImageView
+                    android:id="@+id/bestItemPreviewOverlayHeart"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="15"
+                    android:src="@drawable/ic_heart" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="5"/>
+
+                <TextView
+                    android:id="@+id/bestItemPoints"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="45"
+                    android:textAlignment="center"
+                    android:gravity="center_vertical|top"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/large_textview"
+                    android:text="Test" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Bottom Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/bestItemNick"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="@dimen/medium_textview"
+                android:textColor="@color/black"
+                android:text="#nick"/>
+
+            <RelativeLayout
+                android:id="@+id/bestItemNickOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

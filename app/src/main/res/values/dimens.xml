@@ -1,0 +1,11 @@
+<resources>
+
+    <dimen name="text_list_item_height">40.0dp</dimen>
+    <dimen name="search_textview">22.0sp</dimen>
+    <dimen name="large_textview">24.0sp</dimen>
+    <dimen name="medium_textview">16.0sp</dimen>
+    <dimen name="normal_textview">12.0sp</dimen>
+    <dimen name="small_textview">10.0sp</dimen>
+    <dimen name="tiny_textview">8.0sp</dimen>
+
+</resources>

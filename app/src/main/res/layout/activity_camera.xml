@@ -1,0 +1,416 @@
+<!-- fragment_screen_slide_page.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cameraActivityLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/cameraCaptureLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <TextureView
+            android:id="@+id/cameraView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/cameraTopBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1047"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/cameraFlashToggleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="ToggleFlash"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_camera_noflash" />
+
+                <ImageView
+                    android:id="@+id/cameraSideToggleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:onClick="ToggleFacing"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_camera_switch" />
+
+                <ImageView
+                    android:id="@+id/cameraExitButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="ExitButton"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_camera_exit" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/cameraTimeleftProgressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="50"
+                android:background="@drawable/camera_timeleft_gradient">
+
+                <RelativeLayout
+                    android:id="@+id/timeleftProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:minWidth="0dp"
+                    android:background="@color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cameraTimeleftTextLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="625"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <com.robinhood.ticker.TickerView
+                    android:id="@+id/timeleftView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium_textview"
+                    app:ticker_animationDuration="300" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/cameraInfluencerMessageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="675"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"/>
+
+                <EditText
+                    android:id="@+id/cameraInfluencerMessageEditText"
+                    android:inputType="textNoSuggestions"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_ #"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="80"
+                    android:imeOptions="actionNext"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="80"
+                    android:layout_height="match_parent"
+                    android:hint="@string/influencer_notification_message_hint"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/normal_textview"
+                    android:background="@color/white"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2478"/>
+
+            <ImageView
+                android:id="@+id/focusMark"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1600"
+                android:src="@drawable/ic_focus"
+                android:visibility="invisible"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1828"/>
+
+            <LinearLayout
+                android:id="@+id/captureTutorial"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="700"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/captureTutorialText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7"
+                    android:background="@color/yellow"
+                    android:gravity="center"
+                    android:textSize="@dimen/normal_textview"
+                    android:textColor="@color/black"
+                    android:text="@string/camera_capture_tutorial"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="394"/>
+
+            <LinearLayout
+                android:id="@+id/captureLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1278"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/cameraCaptureButtonLottie"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="camera_capture_animation.json"
+                        app:lottie_progress="0"
+                        app:lottie_loop="false"
+                        app:lottie_cacheStrategy="strong"
+                        android:clickable="true"/>
+
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cameraPreviewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.koszelew.flashbomb.UIComponents.PanoramaImageView
+            android:id="@+id/cameraPreviewImage2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@color/black"
+            android:adjustViewBounds="true" />
+
+        <com.koszelew.flashbomb.UIComponents.PanoramaImageView
+            android:id="@+id/cameraPreviewImage1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@color/black"
+            android:adjustViewBounds="true" />
+
+        <TextureView
+            android:id="@+id/cameraPreviewVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/cameraPreviewTopBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1047"
+                android:orientation="horizontal"
+                android:background="@color/black">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/cameraPreviewLogo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_logo"/>
+
+                <ImageView
+                    android:id="@+id/cameraPreviewExitButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="ExitButton"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_camera_exit"
+                    android:tint="@color/white"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/cameraPreviewCountryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="675"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/cameraPreviewCountryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/normal_textview"
+                    android:text="@string/unknown_country"/>
+
+                <ImageView
+                    android:id="@+id/cameraPreviewCountryEmoji"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/cameraPreviewCountryText"
+                    android:layout_alignBottom="@id/cameraPreviewCountryText"
+                    android:layout_toLeftOf="@id/cameraPreviewCountryText"/>
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5906"/>
+
+            <LinearLayout
+                android:id="@+id/filtersTutorial"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="700"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/filtersTutorialText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7"
+                    android:background="@color/yellow"
+                    android:gravity="center"
+                    android:textSize="@dimen/normal_textview"
+                    android:textColor="@color/black"
+                    android:text="@string/camera_filters_tutorial"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="394"/>
+
+            <LinearLayout
+                android:id="@+id/cameraPreviewSendLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1278"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:indeterminate="true"/>
+
+                    <ImageView
+                        android:id="@+id/sendButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:src="@drawable/ic_send"
+                        android:onClick="SendButton"/>
+
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+package com.koszelew.flashbomb.Utils.Networking;
+
+/* Api response types */
+public enum ResponseType {
+
+    LOGIN,
+    REGISTER,
+    HOME_TAB,
+    OBSERVATIONS_TAB,
+    INFLUENCERS_TAB,
+    PROFILE_TAB,
+    BEST_TAB,
+    VOTE,
+    UNVOTE,
+    JOIN_INFLUENCER,
+    LEAVE_INFLUENCER,
+    INFLUENCER_GALLERY,
+    GET_OBSERVATIONS,
+    GET_BLACKLIST,
+    OBSERVE,
+    UNOBSERVE,
+    SEARCH_OBSERVATIONS,
+    REVEAL_BEST,
+    REPORT,
+    FORGOT_PASSWORD,
+    RESEND_ACTIVATION,
+    CHANGE_PASSWORD,
+    SET_ANONYMOUS,
+    SET_NON_ANONYMOUS,
+    HIDE,
+    UNHIDE
+
+}

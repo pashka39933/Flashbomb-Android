@@ -1,0 +1,254 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent">
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="150" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="700"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15" />
+
+        <LinearLayout
+            android:id="@+id/influencerItemJoinedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="470"
+            android:background="@drawable/influencer_item_bg"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/influencerItemProfileLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="20" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="30">
+
+                    <com.joooonho.SelectableRoundedImageView
+                        android:id="@+id/influencerItemProfileAvatarJoined"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/under_construction"
+                        app:sriv_oval="true"/>
+
+                    <ImageView
+                        android:id="@+id/influencerItemProfileAvatarFlashtimeOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.75"
+                        android:src="@drawable/ic_camera" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/influencerItemProfileNickJoined"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="15"
+                    android:gravity="center_horizontal|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small_textview"
+                    android:text="Nick"/>
+
+                <TextView
+                    android:id="@+id/influencerItemProfileGroupSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="15"
+                    android:gravity="center"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="@dimen/small_textview"
+                    android:text="888K members"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="20" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/influencerItemGalleryLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/influencerGalleryThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/under_construction"
+                    android:tint="#b4000000"/>
+
+                <TextView
+                    android:id="@+id/influencerGalleryTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="XX:XX"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_textview" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/influencerItemFlashtimeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/influencer_item_right_gradient_bg"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3">
+
+                        <ImageView
+                            android:id="@+id/influencerItemFlashtimeIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_camera" />
+
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/influencerItemNotJoinedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="470"
+            android:background="@drawable/influencer_item_bg"
+            android:padding="8dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/yellow"
+                android:visibility="visible">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10" />
+
+                <com.joooonho.SelectableRoundedImageView
+                    android:id="@+id/influencerItemAvatarNotJoined"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="35"
+                    android:src="@drawable/under_construction"
+                    app:sriv_oval="true"/>
+
+                <TextView
+                    android:id="@+id/influencerItemNickNotJoined"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="25"
+                    android:gravity="center"
+                    android:text="Nick"
+                    android:textSize="@dimen/normal_textview"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="20"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="25" />
+
+                    <TextView
+                        android:id="@+id/influencerItemJoinButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:background="@drawable/influencer_item_join_button_bg"
+                        android:backgroundTint="@color/black"
+                        android:gravity="center"
+                        android:text="@string/influencer_join"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/small_textview" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="25" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="150" />
+
+</LinearLayout>

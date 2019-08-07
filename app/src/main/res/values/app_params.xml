@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App name -->
+    <string name="app_name" translatable="false">Flashbomb</string>
+
+    <!-- Main api url  -->
+    <!-- <string name="API_URL" translatable="false">https://api.flashbomb.org/</string> -->
+    <string name="API_URL" translatable="false">http://35.204.203.200/API/</string>
+
+    <!-- Session time -->
+    <integer name="SESSION_TIME_IN_SECONDS">180</integer>
+
+    <!-- Camera debug mode state -->
+    <bool name="CAMERA_DEBUG_MODE">false</bool>
+
+    <!-- Cloudinary params -->
+    <!-- <string name="CLOUDINARY_UPLOAD_URL" translatable="false">https://api.cloudinary.com/v1_1/flashbomb-android/auto/upload</string> -->
+    <string name="CLOUDINARY_UPLOAD_URL" translatable="false">https://api.cloudinary.com/v1_1/flashbomb-dev/auto/upload</string>
+    <string name="CLOUDINARY_VIDEOS_PRESET" translatable="false">videos</string>
+    <string name="CLOUDINARY_IMAGES_PRESET" translatable="false">images</string>
+    <integer name="UPLOAD_MAX_RETRIES">10</integer>
+
+    <!-- Scrolled lists params -->
+    <integer name="HOME_LV_BATCH_SIZE">30</integer>
+    <integer name="BEST_LV_BATCH_SIZE">30</integer>
+    <integer name="OBSERVATIONS_LV_BATCH_SIZE">30</integer>
+    <integer name="INFLUENCERS_LV_BATCH_SIZE">30</integer>
+    <integer name="EVENTS_LV_BATCH_SIZE">30</integer>
+    <integer name="INFLUENCER_GALLERY_LV_BATCH_SIZE">30</integer>
+    <integer name="PROFILE_LV_BATCH_SIZE">10</integer>
+
+    <!-- Animations params -->
+    <integer name="LISTS_ITEMS_SWITCH_TIME">175</integer>
+    <integer name="FADE_TIME">350</integer>
+    <integer name="SLIDESHOW_FADE_TIME">8000</integer>
+    <integer name="TOP_FALL_TIME">500</integer>
+    <integer name="SIDES_TRANSLATION_TIME">400</integer>
+
+    <!-- Media params  -->
+    <integer name="PICTURE_VIDEO_WIDTH_MAX">1200</integer>
+    <integer name="JPG_QUALITY">100</integer>
+
+    <!-- SharedPrefs keys -->
+    <string name="PREFERENCES_TAG" translatable="false">PREFERENCES_TAG</string>
+    <string name="PREFERENCES_LOGIN_KEY" translatable="false">PREFERENCES_LOGIN</string>
+    <string name="PREFERENCES_PASSWORD_KEY" translatable="false">PREFERENCES_PASSWORD</string>
+    <string name="PREFERENCES_NICK_KEY" translatable="false">PREFERENCES_NICK</string>
+    <string name="PREFERENCES_EMAIL_KEY" translatable="false">PREFERENCES_EMAIL</string>
+    <string name="PREFERENCES_BIRTHYEAR_KEY" translatable="false">PREFERENCES_BIRTHYEAR</string>
+    <string name="PREFERENCES_LATEST_SESSION_ID_KEY" translatable="false">PREFERENCES_LATEST_SESSION_ID</string>
+    <string name="PREFERENCES_ACTIVATED_SESSION_ID_KEY" translatable="false">PREFERENCES_SESSION_ID</string>
+    <string name="PREFERENCES_ACTIVATED_SESSION_ID_END_KEY" translatable="false">PREFERENCES_SESSION_ID_END</string>
+    <string name="PREFERENCES_APP_LAUNCHED_KEY" translatable="false">PREFERENCES_APP_LAUNCHED</string>
+    <string name="PREFERENCES_NOTIFICATION_OPENED_FLAG" translatable="false">PREFERENCES_NOTIFICATION_OPENED</string>
+    <string name="PREFERENCES_COUNTRYCODE_KEY" translatable="false">PREFERENCES_COUNTRYCODE</string>
+    <string name="PREFERENCES_LOCALITY_KEY" translatable="false">PREFERENCES_LOCALITY</string>
+    <string name="PREFERENCES_LATITUDE_KEY" translatable="false">PREFERENCES_LATITUDE</string>
+    <string name="PREFERENCES_LONGITUDE_KEY" translatable="false">PREFERENCES_LONGITUDE</string>
+    <string name="PREFERENCES_LOGIN_REGISTER_CACHE" translatable="false">PREFERENCES_LOGIN_REGISTER_CACHE</string>
+    <string name="PREFERENCES_HOME_TAB_CACHE" translatable="false">PREFERENCES_HOME_TAB_CACHE</string>
+    <string name="PREFERENCES_OBSERVATIONS_TAB_CACHE" translatable="false">PREFERENCES_OBSERVATIONS_TAB_CACHE</string>
+    <string name="PREFERENCES_EVENTS_TAB_CACHE" translatable="false">PREFERENCES_EVENTS_TAB_CACHE</string>
+    <string name="PREFERENCES_PROFILE_TAB_CACHE" translatable="false">PREFERENCES_PROFILE_TAB_CACHE</string>
+    <string name="PREFERENCES_BEST_TAB_CACHE" translatable="false">PREFERENCES_BEST_TAB_CACHE</string>
+    <string name="PREFERENCES_GET_OBSERVATIONS_CACHE" translatable="false">PREFERENCES_GET_OBSERVATIONS_CACHE</string>
+    <string name="PREFERENCES_GET_BLACKLIST_CACHE" translatable="false">PREFERENCES_GET_BLACKLIST_CACHE</string>
+    <string name="PREFERENCES_GET_INFLUENCERS_CACHE" translatable="false">PREFERENCES_GET_INFLUENCERS_CACHE</string>
+    <string name="PREFERENCES_CAMERA_CAPTURE_TUTORIAL_SHOW" translatable="false">PREFERENCES_CAMERA_CAPTURE_TUTORIAL_SHOW</string>
+    <string name="PREFERENCES_CAMERA_FILTERS_SHOW" translatable="false">PREFERENCES_CAMERA_FILTERS_SHOW</string>
+    <string name="PREFERENCES_APP_OUTDATED" translatable="false">PREFERENCES_APP_OUTDATED</string>
+    <string name="PREFERENCES_ACCOUNT_VERIFIED" translatable="false">PREFERENCES_ACCOUNT_VERIFIED</string>
+    <string name="PREFERENCES_VIBRATION_NOTIFICATIONS" translatable="false">PREFERENCES_VIBRATION_NOTIFICATIONS</string>
+    <string name="PREFERENCES_ANONYMOUS_BEST" translatable="false">PREFERENCES_ANONYMOUS_BEST</string>
+    <string name="PREFERENCES_SHAKE_TUTORIAL_OPENED" translatable="false">PREFERENCES_SHAKE_TUTORIAL_OPENED</string>
+    <string name="PREFERENCES_BEST_LEAFLET_ACTIVE" translatable="false">PREFERENCES_BEST_LEAFLET_ACTIVE</string>
+    <string name="PREFERENCES_OBS_LEAFLET_ACTIVE" translatable="false">PREFERENCES_OBS_LEAFLET_ACTIVE</string>
+    <string name="PREFERENCES_BEST_TAB_SEEN" translatable="false">PREFERENCES_BEST_TAB_SEEN</string>
+    <string name="PREFERENCES_IMAGE_EFFECTS_ACTIVE" translatable="false">PREFERENCES_IMAGE_EFFECTS_ACTIVE</string>
+    <string name="PREFERENCES_URL_OBSERVATION" translatable="false">PREFERENCES_URL_OBSERVATION</string>
+
+    <!-- Permission request codes -->
+    <integer name="CAMERA_PERMISSIONS_REQUEST_CODE">900</integer>
+    <integer name="EXTERNAL_SAVE_PERMISSIONS_REQUEST_CODE">910</integer>
+
+</resources>

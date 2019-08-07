@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "551272490201",
+    "firebase_url": "https://flashbomb-6f640.firebaseio.com",
+    "project_id": "flashbomb-6f640",
+    "storage_bucket": "flashbomb-6f640.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551272490201:android:6819ced38cc94025",
+        "android_client_info": {
+          "package_name": "com.koszelew.flashbomb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551272490201-i7tkuaum8kra5o5acr6o3leoq9h9j9qg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.koszelew.flashbomb",
+            "certificate_hash": "0f550336f06628740aa76c5bb347cd4ab3c7e7fb"
+          }
+        },
+        {
+          "client_id": "551272490201-0j62k9olfpf0jalof7prhv41dq103u0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ayI9YdRwB-wecVwqrmgC9FxPJOO6SG0"
+        },
+        {
+          "current_key": "AIzaSyCbANKRrTua-IhRflTZJHkjzZfCXEQbi6I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551272490201-0j62k9olfpf0jalof7prhv41dq103u0n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.koszelew.flashbomb"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 27
+        versionName "1.26b"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [onesignal_app_id: "91fe6a8c-5acc-4db8-810a-c5f850bebcfa", onesignal_google_project_number: "REMOTE"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.7.5'
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.airbnb.android:lottie:2.3.1'
+    implementation 'com.github.zomato:androidphotofilters:1.0.1'
+    implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+    implementation 'com.yarolegovich:discrete-scrollview:1.3.2'
+    implementation 'com.danikula:videocache:2.7.0'
+    def uploadServiceVersion = "3.4.2"
+    implementation "net.gotev:uploadservice:$uploadServiceVersion"
+    implementation "net.gotev:uploadservice-okhttp:$uploadServiceVersion"
+    implementation 'com.liulishuo.filedownloader:library:1.7.1'
+    implementation 'com.onesignal:OneSignal:3.8.0'
+    implementation 'com.robinhood.ticker:ticker:1.2.0'
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-perf:11.8.0'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.1'
+    implementation 'commons-net:commons-net:3.6'
+    implementation 'com.squareup:seismic:1.0.2'
+    implementation 'com.joooonho:selectableroundedimageview:1.0.1'
+
+}
+
+apply plugin: 'com.google.gms.google-services'
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.0.1'
+            }
+        }
+    }
+}

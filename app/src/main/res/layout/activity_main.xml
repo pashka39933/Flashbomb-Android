@@ -1,0 +1,590 @@
+<!-- fragment_screen_slide_page.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainActivityLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/mainActivityLayoutCore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1047">
+
+                <LinearLayout
+                    android:id="@+id/mainActivityHomeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/profileButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="OpenTab"
+                        android:tag="profile_l"
+                        android:scaleType="fitCenter"
+                        android:background="@color/transparent"
+                        android:src="@drawable/ic_profile" />
+
+                    <ImageView
+                        android:id="@+id/homeMainIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:onClick="HomeMainIconClick"
+                        android:scaleType="fitCenter"
+                        android:background="@color/transparent"
+                        android:src="@drawable/ic_logo" />
+
+                    <ImageView
+                        android:id="@+id/settingsButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="OpenTab"
+                        android:tag="settings_r"
+                        android:scaleType="fitCenter"
+                        android:background="@color/transparent"
+                        android:src="@drawable/ic_settings" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainActivityBestLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/bestMainIcon"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_best"
+                        android:background="@color/transparent"
+                        android:onClick="BestMainIconClick"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainActivityInfluencersLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/influencersMainIcon"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_influencers"
+                        android:background="@color/transparent"
+                        android:onClick="InfluencersIconClick"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/homePager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8953"
+                android:layout_below="@id/mainActivityHomeLayout" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/swipeTutorialLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4835.7"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="686.92">
+
+                <ImageView
+                    android:id="@+id/swipeTutorialBest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_best_leaflet"
+                    android:scaleType="fitStart"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/swipeTutorialObs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_obs_leaflet"
+                    android:scaleType="fitEnd"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4477.38"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/touchInterceptor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/mainActivitySearchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1047">
+
+                <EditText
+                    android:id="@+id/mainActivitySearchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_"
+                    android:textCursorDrawable="@drawable/cursor_shape"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="16"
+                    android:imeOptions="actionDone"
+                    android:textSize="@dimen/search_textview"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/mainActivitySearchIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/transparent">
+
+                    <ImageView
+                        android:id="@+id/mainActivitySearchIconImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_search"
+                        android:background="@color/transparent"
+                        android:onClick="ObservationsMainIconClick"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/mainActivitySearchListViewLayout"
+                android:tag="mainActivitySearchListViewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3953"
+                android:background="@color/white"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="92">
+
+                    <ListView
+                        android:id="@+id/mainActivitySearchListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="5dp"
+                        android:scrollbarThumbVertical="@drawable/scrollbar_thumb"
+                        android:scrollbarThumbHorizontal="@drawable/scrollbar_thumb"
+                        android:fadeScrollbars="false">
+                    </ListView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="40"/>
+
+                        <ImageView
+                            android:id="@+id/mainActivitySearchNoResults"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:src="@drawable/ic_search_no_results" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="40"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5000" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/appOutdatedScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/appOutdatedMainIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_logo"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7715"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/appOutdatedIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1613"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_update" />
+
+                <TextView
+                    android:id="@+id/appOutdatedInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8387"
+                    android:textColor="@color/black"
+                    android:text="@string/app_outdated_info"
+                    android:textSize="@dimen/normal_textview" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/appOutdatedButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1238"
+            android:background="@color/yellow"
+            android:textSize="@dimen/medium_textview"
+            android:text="@string/app_outdated_button"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:onClick="OpenGooglePlayAppPage"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/accNotVerifiedScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/accNotVerifiedMainIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_logo"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6859"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/accNotVerifiedIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1613"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_update" />
+
+                <TextView
+                    android:id="@+id/accNotVerifiedInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8387"
+                    android:textColor="@color/black"
+                    android:text="@string/account_not_verified_info"
+                    android:textSize="@dimen/normal_textview" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/accNotVerifiedButtonResendText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:background="@color/yellow"
+            android:textSize="@dimen/medium_textview"
+            android:text="@string/account_not_verified_button_resend_text"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:onClick="ActivationEmailResend"/>
+
+        <TextView
+            android:id="@+id/accNotVerifiedButtonLoginText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:background="@color/black"
+            android:textSize="@dimen/medium_textview"
+            android:text="@string/account_not_verified_button_login_text"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:onClick="Logout"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/profileFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:id="@+id/settingsFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:id="@+id/blacklistFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:id="@+id/observationsFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:id="@+id/changePasswordFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:id="@+id/faqFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:id="@+id/influencerGalleryFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:id="@+id/mainActivityTutorialLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black_transparent_dark"
+        android:visibility="gone">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"/>
+
+        <RelativeLayout
+            android:id="@+id/mainActivityTutorialDialogLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@drawable/tutorial_dialog_bg"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:src="@drawable/ic_bomberman"/>
+
+                <com.koszelew.flashbomb.UIComponents.TypeWriterTextView
+                    android:id="@+id/mainActivityTutorialDialogText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="70"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/normal_textview"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainActivitySplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:clickable="true">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/mainActivitySplashLottie"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            app:lottie_fileName="intro_out_animation.json"
+            app:lottie_progress="1"
+            app:lottie_autoPlay="false"
+            android:visibility="visible"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

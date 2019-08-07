@@ -1,0 +1,450 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/loginRegisterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7906"
+            android:background="@color/yellow">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="40"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="20"
+                    android:src="@drawable/ic_logo"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="40"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/loginSlideshow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/loginSlideshowImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/under_construction"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/firstRegisterButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/medium_textview"
+            android:onClick="SwitchToRegisterButton"
+            android:text="@string/register"/>
+
+        <TextView
+            android:id="@+id/firstLoginButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/medium_textview"
+            android:onClick="SwitchToLoginButton"
+            android:text="@string/login"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/registerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/yellow">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2094"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5812"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="80"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/registerNick"
+                    android:inputType="textNoSuggestions"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="16"
+                    android:imeOptions="actionNext"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:hint="@string/register_nick_hint"
+                    android:textAlignment="center"
+                    android:background="@drawable/login_edittext_shape"
+                    android:textSize="@dimen/normal_textview" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
+
+                <EditText
+                    android:id="@+id/registerEmail"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:hint="@string/email_hint"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:background="@drawable/login_edittext_shape"
+                    android:textSize="@dimen/normal_textview" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
+
+                <EditText
+                    android:id="@+id/registerPassword"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="30"
+                    android:imeOptions="actionNext"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:hint="@string/password_hint"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:background="@drawable/login_edittext_shape"
+                    android:textSize="@dimen/normal_textview" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
+
+                <EditText
+                    android:id="@+id/registerRePassword"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="30"
+                    android:imeOptions="actionNext"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:hint="@string/repassword_hint"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:background="@drawable/login_edittext_shape"
+                    android:textSize="@dimen/normal_textview" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
+
+                <EditText
+                    android:id="@+id/registerBirthyear"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:maxLength="4"
+                    android:imeOptions="actionDone"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:hint="@string/birthyear_hint"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:background="@drawable/login_edittext_shape"
+                    android:textSize="@dimen/normal_textview" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"/>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:background="@color/black">
+
+            <TextView
+                android:id="@+id/secondRegisterButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium_textview"
+                android:gravity="center"
+                android:text="@string/register"
+                android:onClick="RegisterButton"
+                android:visibility="visible"/>
+
+            <ProgressBar
+                android:id="@+id/secondRegisterButtonProgressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/loginLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/yellow">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2323.5"
+            android:src="@drawable/ic_logo"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1400"
+            android:src="@drawable/ic_logo"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1276.5"
+            android:src="@drawable/ic_logo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2494"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="80"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/loginNick"
+                    android:inputType="textNoSuggestions"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_@."
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:imeOptions="actionNext"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:hint="@string/login_nick_hint"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:background="@drawable/login_edittext_shape"
+                    android:textSize="@dimen/normal_textview" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
+
+                <EditText
+                    android:id="@+id/loginPassword"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="30"
+                    android:imeOptions="actionDone"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:textColor="@color/black"
+                    android:hint="@string/password_hint"
+                    android:textAlignment="center"
+                    android:background="@drawable/login_edittext_shape"
+                    android:textSize="@dimen/normal_textview" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lostPasswordButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1459"
+            android:textColor="@color/black"
+            android:textSize="@dimen/normal_textview"
+            android:gravity="center"
+            android:text="@string/reminder_hint"
+            android:onClick="ForgotPasswordButton"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:background="@color/black">
+
+            <TextView
+                android:id="@+id/secondLoginButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium_textview"
+                android:gravity="center"
+                android:text="@string/login"
+                android:onClick="LoginButton"
+                android:visibility="visible"/>
+
+            <ProgressBar
+                android:id="@+id/secondLoginButtonProgressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1047"
+            android:src="@drawable/ic_logo"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8953"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/loginActivitySplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loginActivitySplashLottie"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                app:lottie_fileName="intro_out_animation.json"
+                app:lottie_progress="1"
+                android:visibility="invisible"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
